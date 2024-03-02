@@ -5,3 +5,4 @@ for x in 0, 1:
                 f = not y and x and (not z or w)
                 if f:
                     print(x, y, z, w, "!", int(f))
+
