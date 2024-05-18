@@ -11,5 +11,5 @@ def f(n):
     return int(b, 2)
 
 for i in range(1, 100000):
-    if f(i) < 100:
-        print(f(i))
+    if  64 <= f(i) < 72 :
+        print(i)

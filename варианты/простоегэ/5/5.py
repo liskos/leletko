@@ -6,7 +6,8 @@ def f(n):
         b = b.replace("1", "10")
     return int(b, 2)
 
-for i in range(1, 100):
+a = []
+for i in range(1, 1000):
     if f(i) <= 161:
-        print(f(i))
-print(f(12))
+        a.append(f(i))
+print(max(a))

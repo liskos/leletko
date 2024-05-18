@@ -9,6 +9,6 @@ def f(n):
 
 
 for i in range (1000, 10000):
-    if f(i) == "126":
+    if f(i) == "139":
         print(i)
 print(f(1284))
