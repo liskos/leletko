@@ -7,5 +7,5 @@ def f(n):
     return int(b, 2) - n
 
 for n in range(0, 256):
-    if f(n) == -99:
+    if f(n) == -21:
         print(n)

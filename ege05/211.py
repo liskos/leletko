@@ -1,13 +1,16 @@
 def f(n):
-    s1, s2, s3, = str(n)
-    b = [s1, s2, s3]
-    b = sorted(b)
-    a1 = str(b[0]) + str(b[1])
-    a2 = str(b[2]) + str(b[1])
-    return int(a2) - int(a1)
+    s = sorted(str(n))
+    max2 = s[2] + s[1]
+    if s[0] != "0":
+        min2 = s[0] + s[1]
+    elif s[1] != '0':
+        min2 = s[1] + s[0]
+    else:
+        min2 = s[2] + s[0]
+    return int(max2) - int(min2)
 
 
 for i in range(100, 1000):
-    if f(i) == 50:
+    if f(i) == 60:
         print(i)
 print(f(351))
