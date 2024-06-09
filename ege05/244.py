@@ -12,9 +12,16 @@ def f(n):
         b += "0"
     else:
         b += "1"
+    if b.count("1") == b.count("0"):
+        b += b[-1]
+    elif b.count("1") > b.count("0"):
+        b += "0"
+    else:
+        b += "1"
     return int(b, 2)
 
 
-for i in range(95, 100):
+for i in range(96, 1000):
     if f(i) % 4 ==0:
         print(i)
+        break

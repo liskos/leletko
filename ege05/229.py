@@ -5,8 +5,8 @@ def f(n):
 
 
 a = set()
-for i in range(2, 100):
-    if 100 <= f(i) >= 150:
+for i in range(2, 1000):
+    if 100 <= f(i) <= 150:
         a.add(i)
 print(f(11))
 print(len(a))
