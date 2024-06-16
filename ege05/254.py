@@ -22,5 +22,5 @@ def f(n):
 
 
 for i in range(1, 100):
-    if f(i) % 4 != 0 and f(i) % 8 != 0:
+    if f(i) % 4 == 0 and f(i) % 8 != 0:
         print(i)

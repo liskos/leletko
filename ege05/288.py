@@ -10,6 +10,6 @@ def f(n):
 a = set()
 for i in range(1, 1000):
     if 800 <= f(i) <= 1500:
-        a.add(i)
+        a.add(f(i))
 print(f(13))
 print(len(a))

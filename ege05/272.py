@@ -1,12 +1,13 @@
 def p(n):
     a = ""
+    t = "0123456789abcdef"
     while n > 0:
-        a = a + str(n % 16)
-        n = n //16
+        a = a + t[n % 16]
+        n = n // 16
     return a[::-1]
 
 def f(n):
-    b = str(int(p(n)) // 2)
+    b = p(n // 2)
     if n % 4 == 0:
         b = "15" + b + "c"
     else:

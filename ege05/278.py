@@ -13,3 +13,4 @@ print(f(4321))
 for i in range(1, 10000000):
     if f(i) == 31:
         print(i)
+        break

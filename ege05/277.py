@@ -13,3 +13,4 @@ print(f(1234))
 for i in range(1, 10000000):
     if f(i) == 30:
         print(i)
+        break

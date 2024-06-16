@@ -1,15 +1,8 @@
-def s(n):
-    s = 0
-    while n > 0:
-        s = s +  n % 10
-        n = n // 10
-    return bin(s)[2:]
-
 
 def f(n):
     b = bin(n)[2:]
     if n % 2 == 0:
-        b = b + str(s(n))
+        b = b + bin(b.count("1"))[2:]
     else:
         b = "1" + b + "00"
     return  int(b, 2)

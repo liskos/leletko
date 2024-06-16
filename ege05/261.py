@@ -2,6 +2,8 @@ def f(n):
     b = bin(n)[2:]
     if b.rfind("0") != -1:
         b = b[:b.rfind("0")] + b[:2] + b[b.rfind("0") + 1 :]
+    else:
+        return 11111
     b = b[::-1]
     return int(b, 2)
 
