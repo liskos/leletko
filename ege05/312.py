@@ -9,6 +9,8 @@ def f(n):
 
 print(f(4))
 print(f(13))
-for i in range(1, 100):
-    if f(i) > 88:
-        print(f(i), i)
+a = set()
+for i in range(9, 1000):
+    if f(i) == 103:
+        print(i)
+

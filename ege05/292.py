@@ -8,7 +8,7 @@ def f(n):
 
 
 for i in range(1, 1000):
-    if f(i) >= 35:
+    if f(i) < 35:
         print(i)
 print(f(6))
 print(f(4))

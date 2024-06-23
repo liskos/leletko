@@ -7,7 +7,9 @@ def f(n):
     return int(b, 2)
 
 
+a =[]
 for i in range(1, 1000):
     if f(i) < 450:
-        print(f(i))
+        a.append(f(i))
 print(f(4))
+print(max(a))
