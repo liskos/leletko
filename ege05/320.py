@@ -8,18 +8,18 @@ def pr(n):
 def f(n):
     b = pr(n)
     if n % 2 == 0:
-        b = b + b[-2] + b[-1]
+        b = b + b[-2:]
     else:
-        b = b + pr(sum(int(x, 3) for x in b))
+        b = b + pr(sum(int(x) for x in b))
     return int(b, 3)
 
 
 print(f(3))
 print(f(11))
 a = set()
-for i in range(3, 1000):
+for i in range(10, 1000):
     a.add(f(i))
-print(min(a))
-for i in range(3, 1000):
-    if f(i) == 10:
+x = min(a)
+for i in range(10, 1000):
+    if f(i) == x:
         print(i)

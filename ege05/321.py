@@ -12,6 +12,8 @@ def f(n):
 
 
 print(f(7))
-for i in range(1, 100000):
-    if f(i) < 100000:
-        print(i)
+x = 0
+for i in range(1, 1000000):
+    if f(i) < 10 ** 6:
+        x = i
+print(x)
