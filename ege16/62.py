@@ -9,7 +9,7 @@ def f(n):
 
 b = 0
 for i in range(1, 1001):
-    if f(i) % 2 == 1:
+    if set(str(f(i))) <= {"1", "3", "5", "7", "9"}:
         b = b + 1
 
 print(b)

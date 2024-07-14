@@ -6,7 +6,7 @@ def f(n):
     if n > 3 and n % 2 == 0:
         return 2 * n * n + f(n - 1)
     if n > 3 and n % 2 == 1:
-        return n * n * n + n + f(n - 2)
+        return n * n * n + n + f(n - 1)
 
 a = 0
 for i in range(1, 1000):

@@ -6,7 +6,10 @@ def F( n ):
         F(n-1)
         F(n-2)
 
-
+for i in range(1, 1000):
+    a = 0
+    F(i)
+    if a > 2400000
 a = 0
-F(28)
+
 print(a)

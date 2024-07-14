@@ -18,7 +18,7 @@ def f(n):
 
 b = 0
 for i in range(1, 1001):
-    if f(i) % 2 == 0:
+    if set(str(f(i))) <= {"0", "2", "4", "6", "8"} :
         b = b + 1
 
 print(b)

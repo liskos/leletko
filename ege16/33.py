@@ -7,4 +7,5 @@ def F(n):
 print(F(10))
 for i in range(1, 100000):
     if F(i) > 32:
-        print(i)
+        print(i, F(i))
+        break
