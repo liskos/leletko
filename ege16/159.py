@@ -9,8 +9,9 @@ def f(a, b):
         return f(a, b - 1) + a
 
 c = set()
-for a in range(1, 10000):
-    for b in range(1, 10000):
+
+for a in range(1, 100):
+    for b in range(1, 100000000):
         if f(a, b) == 18522000:
-            c.add(a)
+            print(a, b, a*b)
 print(len(c))

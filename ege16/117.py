@@ -11,8 +11,8 @@ def f(n, a):
 
 
 
-a = 0
-for i in range(1, 500000000+1):
+a = 252
+for i in range(6*10**6, 500000000+1):
     if f(i, 0) == 3:
         a = a + 1
     if i % 1000000 == 0:

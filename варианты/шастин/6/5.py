@@ -8,7 +8,7 @@ def p(n):
 def f(n):
     b = p(n)
     if n % 3 == 0:
-        b = b[-1] + b[1:-1] + b[0]
+        b = b[-1] + b[1:-1] + b[0]+"1"
     else:
         b = b + str(n % 3)
     return int(b, 4)
