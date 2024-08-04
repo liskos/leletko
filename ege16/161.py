@@ -7,7 +7,7 @@ def f(n):
         return f(n // 1000) - f(n % 1000)
 
 a = 0
-for i in range(1, 10 ** 6):
+for i in range(0, 10 ** 6 + 1):
     if f(i) == 0:
         a = a + 1
 print(a)

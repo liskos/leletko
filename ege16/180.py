@@ -1,3 +1,5 @@
+import functools
+@functools.cache
 def f(n):
     if n < 9:
         return n // 3 + n % 3
@@ -6,7 +8,7 @@ def f(n):
 
 
 a = 0
-for i in range(1, 9 ** 9):
+for i in range(9**8, 9 ** 9):
     if f(i) == 33:
         a = a + 1
 print(a)
