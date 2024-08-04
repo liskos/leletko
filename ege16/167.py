@@ -1,3 +1,1 @@
-import functools
-@functools.lru_cache(None)
-def f(n):
+print(2023+2022+2021+2020)
