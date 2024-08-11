@@ -15,5 +15,6 @@ def f(n):
 
 print(f(82134))
 for b in range(10000, 100000):
-    if f(b) == 12116:
+    if f(b) == "12116":
         print(b)
+        break
