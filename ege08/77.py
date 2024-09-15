@@ -1,8 +1,10 @@
 import itertools
 
-b = 0
-for i, a in enumerate(itertools.permutations("1010101010", r=6), 1):
+b = set()
+for a in itertools.permutations("таркнище", r=6):
     s = "".join(a)
-    if a[0] == "1" and "11" not in s and "00" not in s:
-        b = b + 1
-print(b)
+    ss = s.replace("р", "т").replace("к","т").replace("н", "т").replace("щ", "т")
+    ss = ss.replace("и", "а").replace("е", "а")
+    if (ss[0] == "т") and ("тт" not in ss ) and ("аа" not in ss) and len(set(a)) == 6:
+        b.add(s)
+print(len(b))

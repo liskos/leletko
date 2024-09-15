@@ -1,8 +1,10 @@
 import itertools
 
-b = 0
-for i, a in enumerate(itertools.permutations("101011010", r=5), 1):
+b = set()
+for a in itertools.permutations("корабли", r=5):
     s = "".join(a)
-    if a[0] == "0" and "11" not in s and "00" not in s:
-        b = b + 1
-print(b)
+    ss = s.replace("р", "к").replace("б","к").replace("л", "к")
+    ss = ss.replace("а", "о").replace("и", "о")
+    if (ss[0] == "о") and ("кк" not in ss ) and ("оо" not in ss) and len(set(a)) == 5:
+        b.add(s)
+print(len(b))

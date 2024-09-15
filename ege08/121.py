@@ -1,5 +1,5 @@
 import itertools
-b = 0
+b = set()
 for a in itertools.permutations("тартар", r=6):
-    b = b + 1
-print(b)
+    b.add(a)
+print(len(b))
