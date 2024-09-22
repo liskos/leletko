@@ -1,7 +1,7 @@
 import itertools
 b = 0
-for i, a in enumerate(itertools.product("аклош", repeat=5), 1):
+for a in itertools.product("аклош", repeat=5):
     s = "".join(a)
-    if (s.count("о") + s.count("a")) > 0:
+    if (s.count("о") + s.count("а")) > 0:
         b += 1
 print(b)
