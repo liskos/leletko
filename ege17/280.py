@@ -3,7 +3,7 @@ def f(n):
     while n > 0:
         b = b + str(n % 8)
         n = n // 8
-    return b.count("7")
+    return b.count("7") *7
 
 
 a = [int(x) for x in open("17data/17-278.txt")]

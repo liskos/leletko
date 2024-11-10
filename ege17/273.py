@@ -3,8 +3,8 @@ m = max(a)
 b = []
 for i in range(len(a)- 2):
     if a[i] + a[i+1] + a[i+2] < m:
-        b.append(a[i])
-        b.append(a[i+1])
-        b.append(a[i+2])
+        b.append(max(a[i:i+3]))
+        b.append(min(a[i:i+3]))
 
-print(len(b), max(b) + min(b))
+
+print(len(b)//2, min(b)+max(b))

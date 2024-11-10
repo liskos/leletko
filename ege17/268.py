@@ -1,15 +1,12 @@
-def f(n):
-    s = 0
-    while n > 0:
-        s = s + n % 10
-        n = n // 10
-    return s
+def f(a, b):
+    global s
+    return (a > s) and b <= s and b % 10 == 7
 
 a = [int(x) for x in open("17data/17-243.txt")]
-s = [f(x) for x in a if x % 49 == 0]
+s = sum(sum(int(i) for i in str(x)) for x in a if x % 49 == 0)
 b = []
 for i in range(len(a)- 1):
-    if (a[i] > sum(s) and a[i+1] <= sum(s) and a[i+1] % 10 == 7) or (a[i] <= sum(s) and a[i+1] < sum(s) and a[i] % 10 == 7):
+    if f(a[i], a[i+1]) or f(a[i+1], a[i]):
         b.append(a[i] + a[i+1])
 
 print(len(b), min(b))

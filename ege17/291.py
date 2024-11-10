@@ -3,7 +3,10 @@ def f(n):
     while n > 0:
         b = b + str(n%6)
         n = n // 6
-    return b.count("0")
+    if b:
+        return b.count("0")
+    return 1
+
 
 
 a = [int(x) for x in open("17data/17-290.txt")]

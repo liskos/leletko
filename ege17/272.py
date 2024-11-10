@@ -7,7 +7,7 @@ def f(n):
 
 
 a = [int(x) for x in open("17data/17-272.txt")]
-b = [x for x in a if x >= 0]
+b = [x for x in a if x > 0]
 sr = sum(b) / len(b)
 c = []
 for i in range(len(a)- 1):

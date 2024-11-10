@@ -1,15 +1,16 @@
-def f(n):
-    b = ""
-    while n > 0:
-        b = b + str(n % 5)
-        n = n // 5
-    return b.count("3")
-
-
+def f(a):
+    k1 = a[1] - a[0]
+    k2 = a[2] - a[1]
+    k3 = a[4] / a[3]
+    k4 = a[5] / a[4]
+    if k1 == k2 and k1 > 0 and k3 == k4 and k3 > 1 and float(k2) == k3:
+        return True
+    else:
+        return False
 a = [int(x) for x in open("17data/17-281.txt")]
 c = []
-d = [f(x) for x in a if x % 32 == 0]
-for i in range(len(a)- 2):
-    if a[i] > sum(d) or a[i+1] > sum(d) or a[i+2] > sum(d):
-        c.append(a[i] + a[i+1] + a[i+2])
+for i in range(len(a)- 5):
+    if f(a[i:i+6]) or f(a[i+3:i+6]+a[i:i+3]):
+        c.append(sum(a[i:i+6]))
+
 print(len(c), max(c))

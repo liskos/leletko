@@ -1,12 +1,12 @@
 def s(n):
     s = 1
     while n > 0:
-        s = s * n%10
+        s = s * (n%10)
         n = n // 10
     return s
 
 
-a = [int(x) for x in open("17data/17-294.txt")]
+a = [int(x) for x in open("17data/17-295.txt")]
 c = []
 m = max(a)
 for i in range(len(a)- 1):

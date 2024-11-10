@@ -10,4 +10,4 @@ def f(n):
     if n > 41 and n % 2 != 0:
         return n * f(n-2)
 
-print(f(9094) / f(9089))
+print(f(9094) // f(9089))
