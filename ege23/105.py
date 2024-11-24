@@ -1,5 +1,5 @@
 def f(a, b, k):
-    if a == b and k <=7:
+    if a == b and k ==7:
         return 1
     if a > b:
         return 0
