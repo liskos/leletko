@@ -5,7 +5,7 @@ def func(x):
 a = [" "] * 200
 
 for i in range(200):
-    if i >= 51:
+    if i >= 25:
         a[i] = "0"
 
 for i in range(51):
@@ -24,6 +24,6 @@ for i in range(51):
     if a[i] == " " and all(a[x] in "13" for x in func(i)):
         a[i] = "4"
 
-import sys
-sys.stdout = open("39.xls", mode="w")
-print(*a[1:], sep="\t")
+print([x for x in range(200) if a[x] == "2"])
+print([x for x in range(200) if a[x] == "3"])
+print([x for x in range(200) if a[x] == "4"])
