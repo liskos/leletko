@@ -20,7 +20,7 @@ for i in range(100):
         a[i] = "2"
 
 for i in range(100):
-    if a[i] == " " and any(a[x] in "2" for x in func(i)):
+    if a[i] == " " and any(a[x] in "02" for x in func(i)):
         a[i] = "3"
 
 for i in range(100):
