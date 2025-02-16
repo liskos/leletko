@@ -28,6 +28,11 @@ for i in range(100):
         if a[i][j] == " " and all(a[x][y] in "-13" for x, y in func(i,j)):
             a[i][j] = "4"
 
+for s in range(1, 24):
+        if any(a[x][y][z] in "1" for x, y, z in func(2, s, 2*s)):
+            print(s)
+            break
+
 
 import sys
 sys.stdout = open("91.xls", mode="w")
