@@ -31,6 +31,7 @@ def visual(clasters):
 data = [list(map(float,line.split())) for line in open("27data/27-10a.txt")]
 clasters = clasterization(data,0.44)
 print([len(c) for c in clasters])
+clasters = [clasters[0], clasters[1] + clasters[2]]
 visual(clasters)
 centrs = [get_centroid(c) for c in clasters]
 x, y = sum(p[0] for p in centrs) / len(centrs), sum(p[1] for p in centrs) / len(centrs)
