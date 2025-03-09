@@ -28,7 +28,7 @@ def visual(clasters):
     turtle.done()
 
 data = [list(map(float,line.split())) for line in open("27data/27-68a.txt")]
-clasters = clasterizatoin(data,0.5)
+clasters = clasterizatoin(data,0.2)
 print([len(c) for c in clasters])
 visual(clasters)
 clasters = clasters[0], clasters[1] + clasters[2]
