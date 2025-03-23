@@ -1,11 +1,3 @@
-def devided(n):
-    a = set()
-    for i in range(1,int(n**0.5)+1):
-        if n % i == 0:
-            a.add(i)
-            a.add(n//i)
-    return a
-
 def prime_numbers(n):
     prime = [True] * n
     prime[0] = prime[1] = False
@@ -16,7 +8,20 @@ def prime_numbers(n):
     b = [i for i in range(n) if prime[i]]
     return b
 
-print(len(devided(2095133040)))
-i = 2095133040
-if len(devided(i)) == 1600:
-    print(i, prime_numbers(i)[-1])
+pr = prime_numbers(100000)
+for i in range(2, 10**10):
+    k_del = 1
+    r = i
+    for p in pr:
+        k = 1
+        while r % p == 0:
+            k += 1
+            r //= p
+        k_del = k_del * k
+        if r == 1:
+            break
+    if k_del == 1600:
+        print(i)
+        break
+    if i % 100000 == 0:
+        print(i, "ok")
