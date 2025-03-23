@@ -1,4 +1,4 @@
-s = open("24(2).txt").read()
+s = open("24.txt").read()
 m = 10**10
 t = ""
 k = 0
