@@ -7,20 +7,20 @@ def prime_numbers(n):
                 prime[j] = False
     b = [i for i in range(n) if prime[i]]
     return b
-def f(n):
-    p = 1
-    while n >0:
-        p = p * n
-        n = n - 1
-    return p
 
-t = f(13)
-print(t)
-r = prime_numbers(100000)
-for i in  range(2,12+1):
-    g = []
-    for x in r:
-        if f(i) % x == 0 and x % 2 != 0:
-            g.append(x)
-    if len(g) % 2 == 0:
-        print(i,len(g)+1)
+def prim_del(n):
+    global p
+    a = set()
+    for i in p:
+        if n % i == 0:
+            a.add(i)
+    return a
+
+
+p = prime_numbers(100)
+for i in  reversed(range(2,14+1)):
+    g = set()
+    for i in range(2, i+1):
+        g |= prim_del(i)
+    if len(g) % 2 == 1:
+        print(i,len(g))

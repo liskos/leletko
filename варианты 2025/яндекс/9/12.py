@@ -17,11 +17,5 @@ def f(s:str):
             s = s.replace("53", "91", 1)
     return s
 
-a = "3" * 40 + "5" * 25 + 20 * "6"
-r = []
-k = 0
-for i in itertools.permutations(str(a), r=85):
-    s = "".join(i)
-    r.append(su(f(s)))
-    print(su(f(s)))
-print(max(r))
+a = "53" * 25 + "63" * 15 + 5 * "6"
+print(su(f(a)))
