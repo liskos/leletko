@@ -1,35 +1,26 @@
-def func(x,y):
-    return (x+2,y), (x*2,y), (x*3,y),(x,y+2), (x,y*2), (x,y*3)
+def func(x,y, r=0):
+    if r == 0:
+        return (x+2,y,0), (x*2,y,0), (x*3,y,1),(x,y+2,0), (x,y*2,0), (x,y*3,1)
+    return (x+2,y,0), (x*2,y,0),(x,y+2,0), (x,y*2,0)
 
 
-a = [[" "] * 1000 for _ in range(1000)]
+a = [[[" ", " "] for _ in range(1000)] for _ in range(1000)]
 
 for i in range(1000):
     for j in range(1000):
         if i + j >= 132:
-            a[i][j] = "0"
+            a[i][j][0] = "0"
+            a[i][j][1] = "0"
 
 for i in range(1000):
     for j in range(1000):
-        if a[i][j] == " " and any(a[x][y] == "0" for x,y in func(i,j)):
-            a[i][j] = "1"
+        if a[i][j] == " " and any(a[x][y][r] == "0" for x,y,r in func(i,j,0)):
+            for x,y,r in func(i,j,0):
+                if r == 0:
+                    a[i][j][0] = "1"
+                if r == 1:
+                    a[i][j][1] = "1"
 
-for i in range(1000):
-    for j in range(1000):
-        if a[i][j] == " " and all(a[x][y] == "1" for x,y in func(i,j)):
-            a[i][j] = "2"
-
-for i in range(1000):
-    for j in range(1000):
-        if a[i][j] == " " and any(a[x][y] == "2" for x,y in func(i,j)):
-            a[i][j] = "3"
-
-for i in range(1000):
-    for j in range(1000):
-        if a[i][j] == " " and all(a[x][y] in "13" for x,y in func(i,j)):
-            a[i][j] = "4"
-
-import sys
-sys.stdout = open("192021.xls", mode="w")
-for i in range(1,1000):
-    print(*a[i][1:], sep="\t")
+for s in range(1, 100):
+    if any(a[x][y][r]=="1" for x, y, r in func(31,s,0)):
+        print(s)

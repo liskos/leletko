@@ -5,27 +5,22 @@ def clasterization(data, r):
     while data:
         clasters.append([data.pop()])
         for p1 in clasters[-1]:
-            sosedi = [p2 for p2 in data if math.dist(p1,p2) <= r]
+            sosedi = [p2 for p2 in data if max(abs(p2[0]-p1[0]),abs(p2[1]-p1[1])) <= r]
             clasters[-1].extend(sosedi)
             for p in sosedi:
                 data.remove(p)
     return clasters
 
-def get_centroid(claster):
-    r = []
+
+def srt(claster):
+    sum_plot = 0
     for p1 in claster:
-        r += [(sum(max(abs(p2[0]-p1[0]),abs(p2[1]-p1[1])) for p2 in claster), p1)]
-
-    return min(r)[1]
-
-def srt(data):
-    r = []
-    for p1 in data:
         k = 0
-        for p2 in data:
-            if (p1[0] != p2[0] or p1[1] != p2[1]) and p1[0]//1 == p2[0]//1 and p1[1]//1 == p2[1]//1:
+        for p2 in claster:
+            if max(abs(p2[0]-p1[0]),abs(p2[1]-p1[1])) <= 1:
                 k += 1
-    return r
+        sum_plot += k
+    return sum_plot/len(claster)
 
 
 
@@ -40,11 +35,11 @@ def visual(clasters):
     turtle.done()
 
 data = [list(map(float,line.split())) for line in open("27a.txt")]
-clasters = clasterization(data,1)
-clastersr = clasters[0] , clasters[1]
+clasters = clasterization(data,0.5)
+clasters = [c for c in clasters if len(c) >= 30]
 print([len(c) for c in clasters])
-print(clastersr)
-visual(clastersr)
-aug = srt(data)
-print(aug)
-print(max(aug)*1000, sum(aug)/len(aug)*1000)
+visual(clasters)
+aug = [srt(c) for c in clasters]
+max_plot = max(aug)
+sr_pl = sum(aug) / len(clasters)
+print(max_plot*1000, sr_pl*1000)
