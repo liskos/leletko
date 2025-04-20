@@ -1,0 +1,10 @@
+file = open("26data/26-k1.txt")
+n,k = map(int,file.readline().split())
+a = [int(file.readline()) for _ in range(n)]
+print(f"число товаров {n}")
+print(f"число товаров с скидкой {k}")
+a.sort(reverse=True)
+print(f"товары {a}")
+print(f"самый дорогой товар без скидки {a[k]}")
+su = int(sum(a[:k])*0.2)
+print(f"сумма всех скидок {su}")

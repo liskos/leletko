@@ -1,14 +1,23 @@
 s = open("24data/k8-80.txt").read()
-i = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-r = []
-h = 0
-for x in i:
-    t = str(x)
-    while t in s:
-        t += str(x)
-    r.append(len(t)-1)
-    if len(t) == 42:
-        h = t[0]
-        break
-
-print(h,max(r))
+import time
+t1 = time.time()
+m = 0
+t = s[0]
+t_best = ""
+for i in s[1:]:
+    if t[-1] == i:
+        t += i
+        if len(t) > m:
+            m = len(t)
+            t_best = t
+    else:
+        t = i
+print(t_best[0], m)
+print(time.time()-t1)
+t2 = time.time()
+import re
+pattern = r"([A-Z0-9])(\1)+"
+r = [x.group() for x in re.finditer(pattern, s)]
+m = max(r, key=len)
+print(m[0], len(m))
+print(time.time()-t2)

@@ -1,14 +1,20 @@
 d = open("24data/k7-m5.txt").read()
 f = d
-d = d[::-1]
-s = d.replace("A", " ").replace("B", " ")
-s = s.split()
+s = ""
 k = 0
-for x in s:
-    k += 1
-    g = len(x)
-    d = d.replace(f"{x}", f"{g}",1)
+for i in d:
+    if i in "AB":
+        if k != 0:
+            s += str(k) + "c"*k + i
+        else:
+            s += i
+        k = 0
+    elif i in "C":
+        k += 1
+if k != 0:
+    s += str(k) + "c"*k
+k = 0
+print(len([x for x in s.replace("B", "A").split("A") if x]))
 
-print(k)
-print(f[:15], f[-15:])
 print(d[:15], d[-15:])
+print(s[:15], s[-15:])
