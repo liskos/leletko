@@ -1,16 +1,20 @@
 import string
-d = open("24data/24-s1.txt").read()
+d = open("24data/24-s1.txt")
 m = 10000000
-r = []
-for s in open("24data/24-s1.txt"):
-    if s.count("A") < m:
-        r.append(s)
-        m = s.count("A")
-
-y = r[-1]
+t = ""
+for s in d:
+    mina = s.count("A")
+    if mina < m:
+        m = mina
+        t = s
+print(m, t)
 g = []
-t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-for i in t:
-    g.append([y.count(i),i])
-
-print(min(g))
+for i in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+    g.append([t.count(i),i])
+g.sort(key=lambda x: (x[0], x[1]), reverse=True)
+bukva = g[0][1]
+k = 0
+d.close()
+for s in open("24data/24-s1.txt"):
+    k += s.count(bukva)
+print(bukva, k)
