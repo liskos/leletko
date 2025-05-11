@@ -3,12 +3,15 @@ s = open("24.txt").read()
 t = "GHIJKLMNOPQRSTUVWXYZ"
 for x in t:
     s = s.replace(f"{x}", " ")
-s = s.split()
-r = []
-for i in s:
-    if i.count("B") == 10:
-        r.append([int(i,16),i])
-
-h = max(r)[1]
-print(len(h))
-print(len(str(max(r)[0])))
+m = 0
+for l in range(len(s)):
+    k = 0
+    for r in range(l, len(s)):
+        if s[l] == "0": break
+        if s[r] == " ": break
+        if s[r] == "B": k += 1
+        if k > 10: break
+        if k == 10 and r - l +1 > m:
+            m = r- l + 1
+            print(m, s[l:r+1])
+print(m)

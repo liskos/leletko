@@ -5,5 +5,4 @@ r = []
 for i in s:
     if i.count("A") >= 3:
         r.append(len(i))
-
 print(max(r))
