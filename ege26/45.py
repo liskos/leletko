@@ -1,4 +1,6 @@
 f = open('26data/26-45.txt')
+import time
+t1 = time.time()
 k = f.readlines()
 n = list(map(int, k))
 m = 0
@@ -15,3 +17,4 @@ for i in range(1, len(n) - 1):
                     m = s
 
 print(c, m)
+print(time.time()-t1)
