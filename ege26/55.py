@@ -8,17 +8,14 @@ b = []
 k = 0
 mm = []
 while len(a) > 0:
-    while len(a) > 0 and sum(b) + a[0] <= s:
-        b.append(a.pop(0))
-    if a and len([x for x in a if sum(b) + x <= s]) > 0:
-        m = max([x for x in a if sum(b) + x <= s])
-        for x in range(len(a)):
-            if a[x] == m:
-                a.pop(x)
-                break
-    k += 1
-    mm.append(sum(b))
-    b = []
+    temp = []
+    b.append([])
+    for x in a:
+        if x + sum(b[-1]) <= s:
+            b[-1].append(x)
+        else:
+            temp.append(x)
+    a = temp
+print(len(b), sum(b[-1]))
 
-print(k,mm[-1])
 
