@@ -5,14 +5,8 @@ a = [int(x) for x in file]
 a.sort(reverse=True)
 print(a)
 b = []
-while sum(b) + a[0] <= s:
-    b.append(a.pop(0))
-
-while sum(b) <= s:
-    m = [x for x in a if sum(b)+x <= s]
-    if m:
-        b.append(max(m))
-    else:
-        break
+for x in a:
+    if sum(b) + x <= s:
+        b.append(x)
 
 print(len(b), min(b))
